@@ -1,10 +1,12 @@
 package game
 
 import (
+	"fmt"
 	"image/color"
 	"math"
 
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"github.com/hajimehoshi/ebiten/v2/inpututil"
 	"github.com/hajimehoshi/ebiten/v2/vector"
 )
@@ -58,4 +60,5 @@ func (g *Game) Draw(canvas *ebiten.Image) {
 		y += dy
 	}
 	vector.FillRect(canvas, 0, 0, 64, float32(height), color.RGBA{48, 64, 128, 255}, false)
+	ebitenutil.DebugPrint(canvas, fmt.Sprintf("BOUNDS: %v", bounds))
 }
